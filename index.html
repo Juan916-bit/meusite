@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bem-vindo ao Bazar da Layla, sua loja de produtos únicos e exclusivos!">
+    <meta name="keywords" content="bazar, Layla, loja, produtos, exclusivos">
+    <meta name="author" content="Seu Nome">
+    <title>Bazar da Layla</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            box-sizing: border-box;
+        }
+        header {
+            background: linear-gradient(135deg, #4CAF50, #45A049);
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.125rem;
+        }
+        main {
+            padding: 4rem 2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #4CAF50;
+        }
+        section p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .product {
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product img {
+            width: 100%;
+            height: 250px; /* Padroniza a altura das imagens */
+            object-fit: cover; /* Mantém a proporção e cobre a área */
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .product-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .product-info h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        .product-info p {
+            margin: 0.5rem 0;
+        }
+        .price {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+        }
+        .share-section {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .share-buttons a {
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .share-buttons a:hover {
+            background: #45A049;
+        }
+        .fullscreen-image {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .fullscreen-image.active {
+            display: flex;
+        }
+        .fullscreen-image img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bazar da Layla</h1>
+        <p>Seu destino para produtos únicos e exclusivos!</p>
+    </header>
+    <main>
+        <section>
+            <h2>Sobre Nós</h2>
+            <p>O Bazar da Layla oferece uma variedade de produtos que vão desde itens artesanais, perfumes, maquiagens até peças de decoração exclusivas. Explore nossa coleção e encontre o que você procura!</p>
+        </section>
+        <section>
+            <h2>Contato</h2>
+            <p>Se você tiver alguma dúvida ou sugestão, não hesite em entrar em contato conosco pelo e-mail: <a href="mailto:laylabazar33@gmail.com">laylabazar33@gmail.com</a></p>
+            <p>Ou pelo WhatsApp: <a href="https://wa.me/5521985233241" target="_blank">21 98523-3241</a></p>
+        </section>
+        <section>
+            <h2>Produtos</h2>
+            <div class="product-grid">
+                <div class="product" onclick="showImage('Screenshot_1.png')">
+                    <img src="Screenshot_1.png" alt="Hidratante">
+                    <div class="product-info">
+                        <h3>Hidratante Nutritivo</h3>
+                        <p>Experimente a suavidade e nutrição com nosso Hidratante Nutritivo. Formulado com ingredientes naturais para proporcionar uma pele profundamente hidratada e com um toque aveludado.</p>
+                        <p class="price">R$ 49,90</p>
+                    </div>
+                </div>
+                <div class="product" onclick="showImage('Screenshot_2.png')">
+                    <img src="Screenshot_2.png" alt="Desodorante Rolon">
+                    <div class="product-info">
+                        <h3>Desodorante Rolon Fresh</h3>
+                        <p>Envolva-se com a sensação de frescor o dia todo com nosso Desodorante Rolon Fresh. Protege contra odores e mantém você confiante com um aroma refrescante e duradouro.</p>
+                        <p class="price">R$ 39,90</p>
+                    </div>
+                </div>
+                <div class="product" onclick="showImage('Screenshot_3.png')">
+                    <img src="Screenshot_3.png" alt="Sabonete Líquido">
+                    <div class="product-info">
+                        <h3>Sabonete Líquido Revitalizante</h3>
+                        <p>Desfrute de uma limpeza profunda e revigorante com nosso Sabonete Líquido Revitalizante. Formulado para limpar e revitalizar sua pele, deixando-a fresca e suave.</p>
+                        <p class="price">R$ 29,90</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="share-section">
+            <h2>Compartilhe Nosso Site!</h2>
+            <p>Ajude-nos a espalhar a palavra! Compartilhe nosso site com seus amigos e familiares.</p>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?url=https://bazar-layla.example.com&text=Confira%20o%20Bazar%20da%20Layla%21%20Produtos%20únicos%20e%20exclusivos%21" target="_blank">Compartilhar no Twitter</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://bazar-layla.example.com" target="_blank">Compartilhar no Facebook</a>
+                <a href="https://wa.me/?text=Confira%20o%20Bazar%20da%20Layla%20:%20https://bazar-layla.example.com" target="_blank">Compartilhar no WhatsApp</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bazar da Layla. Todos os direitos reservados.</p>
+    </footer>
+    <div id="fullscreen" class="fullscreen-image">
+        <button class="close-btn" onclick="closeImage()">×</button>
+        <img id="fullscreen-img" src="" alt="Imagem do Produto">
+    </div>
+    <script>
+        function showImage(src) {
+            document.getElementById('fullscreen-img').src = src;
+            document.getElementById('fullscreen').classList.add('active');
+        }
+        function closeImage() {
+            document.getElementById('fullscreen').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
